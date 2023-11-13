@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+ <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="#" th:href="@{/CSS/Style.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/CSS/MyBookingdropdown.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/CSS/Pagination.css}"/>
+     <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <title>Home Page</title>
+</head>
+<body>
+       <div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+       
+        
+        	        
+			<div class="Navbar">
+						    <a class="active" href="/user/search">Home Page</a>
+						    
+						    <div class="dropdown">
+						    
+						    <button class="dropbtn">My Account
+						      <i class="fa fa-caret-down"></i>
+						    </button>
+						    
+						    <div class="dropdown-content">
+						      <a href="/user/myProfile">My profile</a>
+						      <a href="/user/change-password">Change Password</a>
+						      <a href="/logout">Logout</a>
+						    </div>						    
+						  </div> 
+						  	
+						  	<div class="dropdown">					  
+						      <button class="dropbtn">My Transactions
+						     <i class="fa fa-caret-down"></i>						     
+						     </button>
+						    <div class="dropdown-content">
+						       <a href="/user/myBooking">My Bookings</a>
+						      <a href="/user/myCancelTicket">Cancelled Ticket</a>
+						    </div>	
+						    
+					</div> 				   				  
+				</div>
+				        
+				        
+		     
+	         <style>
+	         
+	         
+				table {
+				  border-collapse: collapse;
+				  border-spacing: 0;
+				  width: 100%;
+				  border: 6px solid #fff;
+				  
+				}
+				h2{
+				text-align: center;
+				}
+				
+				th, td {
+				  text-align: left;
+				  padding: 14px;
+				  font-weight: 500;
+				  
+				  
+				}
+				th{
+			    font-size: 16px;
+			    background-color: black;
+			    color: #fff;
+			    font-weight: 600;
+				
+				}
+				
+				tr:nth-child(even) {
+				  background-color: #f2f2f2;
+				}
+				</style>
+				</head>
+				<body>
+				
+				<h2>Cancel Ticket</h2>
+				
+				<table>
+				  <tr>
+				    <th>Train ID</th>
+				    <th>Train Name</th>
+				    <th>Departure Date</th>
+				    <th>Train From</th>
+				    <th>Train To</th>
+				    				    
+				     
+				    <th>First Name</th>
+				    <th>Email Id</th>
+				    <th>Phone Number</th>
+				    <th>Ticket Price</th>
+				    	
+				    	    
+				  </tr>
+		     
+		     <tbody>			 	  
+				    <tr th:each="CancelTrains : ${cancelTrains}">
+				     				     
+				   <td th:text="${'SCMTRAIN'+CancelTrains.id}">Train ID</td>
+				    <td th:text="${CancelTrains.trainName}">Train Name</td>
+				    <td th:text="${CancelTrains.departureDate}">Departure Date</td>
+				    <td th:text="${CancelTrains.trainFrom}">Train From</td>
+				    <td th:text="${CancelTrains.trainTo}">Train To</td> 
+								  	
+				     <td th:text="${CancelTrains.firstName}">First Name</td>
+				  	 <td th:text="${CancelTrains.email}">Email Id</td>	
+				  	 <td th:text="${CancelTrains.phone}">Phone Number</td>				       
+				     <td th:text="${CancelTrains.ticketPrice}">Ticket Price</td>
+				    
+					    		
+		    </tr>     
+         </tbody>
+		  				 
+		</table>
+				
+				<ul class="pagination">
+				<li></li>
+				<li></li>
+				</ul> 
+		 <!-- pagination part
+				
+		    <nav aria-label="Page navigation example">
+		    
+			  <ul class="pagination">
+			  
+			    <li th:if="${CurrentPage !=0}" class="page-item"><a class="page-link" th:href="@{'/user/myBooking/'+${CurrentPage-1}}" href="#">Previous</a></li>
+			    
+			    <li th:classappend="${CurrentPage==i-1?'active':''}" th:each="i:${#numbers.sequence(1,totalPages)}" class="page-item"><a class="page-link" th:href="@{'/user/myBooking/'+${i-1}}"><span th:text="${i}"></span></a></li>
+			    			    
+			    <li th:if="${CurrentPage+1 !=totalPages}" class="page-item"><a class="page-link" th:href="@{'/user/myBooking/'+${CurrentPage+1}}" href="#">Next</a></li>
+			    
+			  </ul> 
+			</nav> 	 -->	
+		
+		
+		<!-- pagination part 	
+		
+		<div class="container">
+				    
+		  <div class="links">
+		    <span th:if="${CurrentPage !=0}" class="page-item">
+		    <a class="link" th:href="@{'/user/myBooking/'+${CurrentPage-1}}" href="#"><i class="fa-solid fa-angles-left"></i></a></span>		       
+		  </div>
+		      		     
+		  <div class="links">		      
+		    <span th:classappend="${CurrentPage==i-1?'active':''}" th:each="i:${#numbers.sequence(1,totalPages)}" >
+		    <a class="link" th:href="@{'/user/myBooking/'+${i-1}}"><span th:text="${i}"></span></a></span>  
+		  </div>
+		
+		     
+		  <div class="links">
+		   <span th:if="${CurrentPage+1 !=totalPages}" class="page-item">
+		   <a class="link" th:href="@{'/user/myBooking/'+${CurrentPage+1}}" href="#"><i class="fa-solid fa-angles-right"></i></a></span>   
+		 </div>		      
+    </div>	-->
+				
+	</body>
+</html>	       

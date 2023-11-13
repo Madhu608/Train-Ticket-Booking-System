@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+ <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="#" th:href="@{/CSS/Style.css}"/>
+    <link rel="stylesheet" href="#" th:href="@{/CSS/navbar.css}"/>
+        <link rel="stylesheet" href="" th:href="@{/CSS/Pagination.css}"/>
+     <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+   <title>Home Page</title>
+</head>
+<body>
+       <div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+       
+				        
+				        
+				        
+		<div class="topnav">
+			 
+				   <a class="active" href="/admin/AdminLogin">Home Page</a>
+				  
+				   <a href="/admin/addtrain" class="text AddTrain-link">Add Train</a>
+				  
+				   <a href="/admin/showtrain/0" class="text User-Registratio-link">Show Train</a>
+				   
+				   <a href="/admin/listOfUsers/0" class="text ShowTrain-link">List of Users</a>
+				   
+				    <a href="/admin/showtrain&passenger/0" class="text DisplayTrain&Passenger-link">Display Train & Passenger</a>
+				 				  
+				  <a href="/admin/trainMaster" class="texttext TrainMaster-link">Train Master</a>
+				  
+				   <a href="/logout" class="text signup-link">Logout</a>
+				   				  				 								  
+		     </div> 
+				   				  				 								  
+		     </div> 
+	        <style>
+				table {
+				  border-collapse: collapse;
+				  border-spacing: 0;
+				  width: 100%;
+				  border: 6px solid #fff;
+				  
+				}
+				h2{
+				text-align: center;
+				font-size: 35px;
+				}
+				
+				th, td {
+				  text-align: left;
+				  padding: 14px;
+				  
+				  
+				}
+				th{
+			    font-size: 18px;
+				
+				}
+				
+				tr:nth-child(even) {
+				  background-color: #f2f2f2;
+				}
+				</style>
+				</head>
+				<body>
+				
+				<h2>List of All Trains</h2>
+				
+				<table>
+				  <tr>
+				    <th>Train ID</th>
+				    <th>Train Name</th>
+				    <th>Schedule</th>
+				    <th>Departure Date</th>
+				    <th>Train From</th>
+				    <th>Train To</th>
+				    <th>Train From Timing</th>
+				    <th>Train To Time</th> 
+				    <th>Train Stops</th>
+				    <th>Ticket Price</th>
+				    <th>Update</th>
+				    <th>Delete</th>
+				  </tr>
+				    <tr th:each="listtrain:${listTrains}">
+				    
+				    <td th:text="${listtrain.id}"  >Train ID</td>
+				    <td th:text="${listtrain.trainName}">Train Name</td>
+				    <td th:text="${listtrain.schedule}">Schedule</td>
+				    <td th:text="${listtrain.departureDate}">Departure Date</td>
+				    <td th:text="${listtrain.trainFrom}">Train From</td>
+				    <td th:text="${listtrain.trainTo}">Train To</td>
+				    <td th:text="${listtrain.trainFromTime}">Train From Timing</td>
+				    <td th:text="${listtrain.trainToTime}">Train To Time</td>
+				    <td th:text="${listtrain.numberOfStops}">Train Stops</td>
+				    <td th:text="${listtrain.ticketPrice}">Ticket Price</td>
+			  <td>
+			    <a th:href="@{/admin/listtrain/update/{id}(id=${listtrain.id})}" class="btn">Update</a>		        	        
+		     </td>
+		     <td><a th:href="@{/admin/listtrain/delete/{id}(id=${listtrain.id})}" class="btn-Delete">Delete</a>	</td>
+				  </tr>
+				</table>
+				
+			<ul class="pagination">
+				<li></li>
+				
+				</ul> 
+				
+	 <!-- pagination part -->
+		
+		<div class="container">
+				    
+		  <div class="links">
+		    <span th:if="${CurrentPage !=0}" class="page-item">
+		    <a class="link" th:href="@{'/admin/showtrain/'+${CurrentPage-1}}" href="#"><i class="fa-solid fa-angles-left"></i></a></span>		       
+		  </div>
+		      		     
+		  <div class="links">		      
+		    <span th:classappend="${CurrentPage==i-1?'active':''}" th:each="i:${#numbers.sequence(1,totalPages)}" >
+		    <a class="link" th:href="@{'/admin/showtrain/'+${i-1}}"><span th:text="${i}"></span></a></span>  
+		  </div>
+		
+		     
+		  <div class="links">
+		   <span th:if="${CurrentPage+1 !=totalPages}" class="page-item">
+		   <a class="link" th:href="@{'/admin/showtrain/'+${CurrentPage+1}}" href="#"><i class="fa-solid fa-angles-right"></i></a></span>   
+		 </div>		      
+    </div>		
+				
+				
+	</body>
+</html>	       

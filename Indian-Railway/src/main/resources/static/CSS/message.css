@@ -1,0 +1,39 @@
+@charset "ISO-8859-1";
+
+.message{
+	font-size: 19px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: green;
+	padding-left: 10%;
+}
+
+.Message{
+	font-size: 23px;
+	margin-bottom: 15px;
+	color: green;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+.Invalid-Username{
+	font-size: 23px;
+	margin-bottom: 15px;
+	color: red;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+.OTP{
+    font-size: 20px;
+	margin-top: 12px;
+	color: green;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.addmessage{
+	font-size: 19px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: green;
+
+	text-align: center;
+}
+

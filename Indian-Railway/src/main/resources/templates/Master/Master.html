@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="" th:href="@{/CSS/Master.css}"/>
+    
+      <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+
+         
+</head>
+<body>
+      <div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+        		        
+			<div class="topnav">
+				   
+				     <a class="active" href="/admin/AdminLogin">Home Page</a>
+				  
+				   <a href="/admin/addtrain" class="text AddTrain-link">Add Train</a>
+				  
+				   <a href="/admin/showtrain/0" class="text User-Registratio-link">Show Train</a>
+				   
+				   <a href="/admin/listOfUsers/0" class="text ShowTrain-link">List of Users</a>
+				   
+				    <a href="/admin/showtrain&passenger/0" class="text DisplayTrain&Passenger-link">Display Train & Passenger</a>
+				  				  
+				   <a href="/logout" class="text signup-link">Logout</a>	   				  				 								  
+		     </div>                
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Add No of Stop</span>
+                
+                
+                
+
+                 <form  th:action="@{/admin/SaveNumberofstops}" method="post"   object="${Master}">
+                    <div class="input-field">
+                        <input type="number" placeholder="Enter the stop" name="numberofStop" required>
+                        <i class="uil uil-metro"></i>
+                    </div>
+                    
+
+
+                    <div class="input-field button">
+                        <input type="submit" value="Add">
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+   
+</body>

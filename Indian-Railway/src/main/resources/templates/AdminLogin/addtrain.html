@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="#" th:href="@{/CSS/AddTrain.css}"/>
+    <link rel="stylesheet" href="#" th:href="@{/CSS/Style.css}"/>
+    <link rel="stylesheet" href="#" th:href="@{/CSS/navbar.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/CSS/message.css}"/>
+    
+    
+    
+     
+
+    <title>Responsive Regisration Form </title> 
+</head>
+<body>
+
+
+		<div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+         
+        
+				        
+				        
+		 <div class="topnav">
+			 
+				   <a class="active" href="/admin/AdminLogin">Home Page</a>
+				  
+				   <a href="/admin/addtrain" class="text AddTrain-link">Add Train</a>
+				  
+				   <a href="/admin/showtrain/0" class="text User-Registratio-link">Show Train</a>
+				   
+				   <a href="/admin/listOfUsers/0" class="text ShowTrain-link">List of Users</a>
+				   
+				    <a href="/admin/showtrain&passenger/0" class="text DisplayTrain&Passenger-link">Display Train & Passenger</a>
+				  				  
+				   <a href="/logout" class="text signup-link">Logout</a>
+				   				  				 								  
+		     </div> >             
+		     
+    <div class="container">
+           
+               <!-- Start of Alert Message Filed -->
+				<div class="addmessage">
+				<div th:if="${session.message}">
+					<div class="alert alert-primary" role="alert"
+						th:classappend="${'alert-'+session.message.type}">
+						<span class="text-dark fw-bold"
+							th:text="${session.message.content}"></span>
+					</div>
+					<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				</div>
+				</div>
+				<!-- End of Alert Message Filed -->
+    
+    
+    
+        <header>Train Details</header>
+        
+     
+
+        <form th:action="@{Savetraindetails}" method="post" th:object="${traindetails}">
+           
+                      
+            <div class="form first">
+                <div class="details personal">
+
+                    <div class="fields">
+                       
+
+                         <div class="input-field">
+                            <label>Train Name</label>
+                            <input type="text" placeholder="Enter train name" name="trainName" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Schedule</label>
+                             <select name="Schedule" >
+								  <option  title="--Select--">--Select--</option>
+								  <option value="Daily">Daily</option>
+								  <option value="Weekly">Weekly</option>
+							  </select>
+                        </div>
+ 							
+                        
+                        <div class="input-field">
+                            <label>Train From </label>
+                            <input type="text" placeholder="Enter train from" name="trainFrom" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Train To </label>
+                            <input type="text" placeholder="Enter mobile number" name="trainTo" required>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label>Train Date </label>
+                            <input type="date" placeholder="Enter train Date" name="departureDate" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Train From Timing </label>
+                            <input type="time" placeholder="Enter train from timing" name="trainFromTime" required>
+                        </div>
+                        
+                        <div class="input-field">
+                            <label>Train  To  Time </label>
+                            <input type="time" placeholder="Enter train to timing" name="trainToTime" required>
+                        </div>          
+                        
+                        <div class="input-field">
+                            <label>No Of Stop</label>
+                            <!--  <input type="number" placeholder="Enter number of stop" name="numberOfStops" required>-->
+                            
+                            <select id="noOfStop"  name="numberOfStops" required>			     
+								 <option value="">--Select--</option>
+								 <option th:each="numberofStop:${numberofStops}"
+								                th:value="${numberofStop.id}"
+												th:text="${numberofStop.numberofStop}">					
+								</option>
+							</Select>
+                        </div>
+                        <div class="input-field">
+                            <label>Ticket Price </label>
+                            <input type="text" placeholder="Enter ticket price" name="ticketPrice" required>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="input-field button">
+                        <input type="submit" value="Add">
+                    </div>
+                    
+                </div> 
+           </form>
+      </div>
+
+       
+
+</body>
+</html>

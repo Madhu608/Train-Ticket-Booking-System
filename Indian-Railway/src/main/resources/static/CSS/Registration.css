@@ -1,0 +1,262 @@
+@charset "ISO-8859-1";
+/* ===== Google Font Import - Poformsins ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+ 
+ .heading{
+  
+  font-size:25px;
+  font-weight:bold;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
+  background-color: #fff;
+    
+}
+
+.image{
+	display: flex;
+	/*flex-direction:row;*/
+	justify-content: center; 
+	align-items: center; 
+	border-radius: 100px;
+}
+
+ body{
+    height: 100vh;
+    display:inherit;
+    align-items: center;
+    justify-content: center;
+    background-color: #cccccc;
+    background-image: url("/IMAGE/banner-10.jpg");
+    background-size: 100% 110%;
+    background-repeat: no-repeat;
+}
+
+.container{
+    position: relative;
+    max-width: 410px;
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-left: 62%;
+    margin-top:-43%;
+    
+}
+
+.container .forms{
+    display: flex;
+    align-items: center;
+    height: 420px;
+    width: 200%;
+    transition: height 0.2s ease;
+   
+    
+}
+.container .forms-reg{
+    display: flex;
+    align-items: center;
+    height: 640px;
+    width: 200%;
+    transition: height 0.2s ease;
+}
+
+
+.container .form{
+    width: 50%;
+    padding: 30px;   
+    background-color: #fff;
+    transition: margin-left 0.18s ease;
+    
+    
+}
+
+.container.active .login{
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+.container.active .signup{
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+.container.active .forms{
+    height: 600px;
+}
+.container .form .title{
+    position: relative;
+    font-size: 30px;
+    font-weight: 600;   
+    
+}
+
+.form .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+    background-color: #4070f4;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.form .input-field{
+    position: relative;
+    height: 35px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-field input{
+    position: absolute;
+    height: 100%;
+    width: 102%;
+    padding: 0 35px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+    border-bottom-color: #4070f4;
+}
+
+.input-field i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 25px;
+    transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+    color: #4070f4;
+}
+
+.input-field i.icon{
+    left: 0;
+}
+.input-field i.showHidePw{
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-content input{
+    margin-right: 10px;
+    accent-color: #4070f4;
+}
+
+.form .text{
+    color: #333;
+    font-size: 15px;
+}
+
+.form a.text{
+    color: #4070f4;
+    text-decoration: none;
+}
+.form a:hover{
+    text-decoration: underline;
+}
+
+.form .button{
+    margin-top: 35px;
+   
+    
+}
+
+.form .button input{
+    border: none;
+    color: black;
+    font-size: 20px;
+    font-weight: 500; 
+    letter-spacing: 1px;
+    border-radius: 6px;
+    background-color: #4070f4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.button input:hover{
+    background-color: #1098ad;
+}
+
+.form .login-signup{
+	background-color: white;
+    margin-top: 30px;
+    text-align: center;
+}
+
+
+
+/* Navigation Bar */
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  margin-bottom: 20px;
+}
+
+.topnav a { 
+  margin-left:120px; 
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size:18px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  margin-left:16%;
+ 
+  background-color: #04AA6D;
+  color: white;
+}
+
+.Invalid-Email{
+	font-size: 15px;
+	color: red;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+

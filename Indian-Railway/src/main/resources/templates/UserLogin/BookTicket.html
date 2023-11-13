@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="#" th:href="@{/CSS/BookTicket.css}"/>
+    <link rel="stylesheet" href="#" th:href="@{/CSS/Style.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/CSS/dropdown.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     
+
+    <title>Responsive Regisration Form </title> 
+</head>
+<body>
+
+
+		<div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+         
+        
+				        
+				        
+			<div class="navbar">
+						    <a class="active" href="/user/search">Home Page</a>
+						    
+						    <div class="dropdown">
+						    
+						    <button class="dropbtn">My Account
+						      <i class="fa fa-caret-down"></i>
+						    </button>
+						    
+						    <div class="dropdown-content">
+						      <a href="/user/myProfile">My profile</a>
+						      <a href="/user/change-password">Change Password</a>
+						      <a href="/logout">Logout</a>
+						    </div>						    
+						  </div> 
+						  	
+						  	<div class="dropdown">					  
+						      <button class="dropbtn">My Transactions
+						     <i class="fa fa-caret-down"></i>						     
+						     </button>
+						    <div class="dropdown-content">
+						       <a href="/user/myBooking">My Bookings</a>
+						       <a href="/user/myCancelTicket">Cancelled Ticket</a>
+						    </div>						    
+					</div> 				   				  
+				</div>            
+		     
+    <div class="container">
+        <header>Book Ticket</header>
+
+        <form th:action="@{/user/savePassengers}" method="post" th:object="${passenger}">
+         <input type="hidden" name="id" th:field="${trainDetails.id}"/>
+            
+            <div class="form first">
+                <div class="details personal">
+
+                    <div class="fields">
+                       
+                        <div class="input-field">
+                            <label>First Name </label>
+                            <input type="text" placeholder="Enter your First Name" name="firstName"  required  minlength="2" maxlength="20" >
+                        </div>
+                        
+                        
+                         <div class="input-field">
+                            <label>Last Name</label>
+                            <input type="text" placeholder="Enter your Last Name" name="lastName" required  minlength="1" maxlength="20"  >
+                        </div>
+                        
+                         <div class="input-field">
+                            <label>Age</label>
+                            <input type="text" placeholder="Enter your age" name="age" required  minlength="1" maxlength="2" >
+                        </div>
+                        
+                         <div class="input-field">
+                            <label>Gender</label>
+                             <select name="gender" >
+								  <option  title="--Select--">--Select--</option>
+								  <option value="Male">Male</option>
+								  <option value="Female">Female</option>
+								  <option value="Transgender">Transgender</option>
+							  </select>
+                        </div>
+                        
+                        
+                         <div class="input-field">
+                            <label>Aadhar Number</label>
+                            <input type="text" placeholder="Enter your aadhar number" name="aadharNumber" required  minlength="1" maxlength="12" >
+                        </div>
+                        
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="email" placeholder="Enter your email" name="email" required  minlength="10" maxlength="80" >
+                     </div>
+                        
+                        
+                         <div class="input-field">
+                            <label>Phone Number</label>
+                            <input type="text" placeholder="Enter your phone number" name="phone" required  minlength="10" maxlength="10" >
+                        </div>
+                        
+                      
+                       <div class="input-field">
+                            <label>Ticket Price </label> 
+                            <input type="text"  name="ticketPrice" th:value="${trainDetails.ticketPrice}" readonly="readonly">
+                        </div>  
+                       
+                                           
+
+                         <div class="input-field">
+                            <label>Train Name</label>
+                            <input type="text"  name="trainName" th:value="${trainDetails.trainName}" readonly="readonly">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Schedule</label>
+                            <input type="text" name="schedule" th:value="${trainDetails.schedule}" readonly="readonly">
+                        </div>
+ 							
+                        
+                        <div class="input-field">
+                            <label>Train From </label>
+                            <input type="text"  name="trainFrom" th:value="${trainDetails.trainFrom}" readonly="readonly">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Train To </label>
+                            <input type="text"  name="trainTo" th:value="${trainDetails.trainTo}" readonly="readonly">
+                        </div>
+                        
+                        <div class="input-field">
+                            <label>Train Date </label>
+                            <input type="date"  name="departureDate" th:value="${trainDetails.departureDate}"  readonly="readonly">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Train From Timing </label>
+                            <input type="time"  name="trainFromTime" th:value="${trainDetails.trainFromTime}" readonly="readonly">
+                        </div>
+                        
+                        <div class="input-field">
+                            <label>Train  To  Time </label>
+                            <input type="time"  name="trainToTime" th:value="${trainDetails.trainToTime}" readonly="readonly">
+                        </div>          
+                        
+                                                                                                                 
+                      </div>  
+                   </div>
+                
+	                <div class="input-field button">
+	                   <input type="submit" value="Book">
+	                </div>
+                
+                </div>   
+           </form>
+      </div>
+
+       
+
+</body>
+</html>
