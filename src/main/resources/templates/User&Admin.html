@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+ <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="#" th:href="@{/CSS/Style.css}"/>
+    <link rel="stylesheet" href="#" th:href="@{/CSS/navbar.css}"/>
+   <title>Home Page</title>
+</head>
+<body>
+       <div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+       
+       <div class="image">
+        <img  src="#" th:src="@{/IMAGE/banner1.jpg}"  style="width:100%;height:500px"/>
+        </div> 
+        
+				        
+				        
+			 <div class="topnav">
+			 
+				   <a class="active" href="/index">Home Page</a>
+				  
+				   <a href="/Userlogin" class="text signup-link">User Login</a>
+				  
+				   <a href="/AdminLogin" class="text User-Registratio-link">Admin Login</a>
+				  				 								  
+		     </div> 
+		     
+				<style>
+				* {
+				  box-sizing: border-box;
+				}
+				
+				/* Create three equal columns that floats next to each other */
+				.column {
+				  float: left;
+				  width: 30%;
+				  padding: 10px;
+				  height: 100%; /* Should be removed. Only for demonstration */
+				  margin-left: 20px;
+				  margin-top: 20px;
+				  
+				  
+				}
+				
+				/* Clear floats after the columns */
+				.row:after {
+				  content: "";
+				  display: table;
+				  clear: both;				  
+				}
+				
+				p{
+				
+				font-size: 18px;				
+				font-family: Arial, Helvetica, sans-serif;
+				}
+				.row{
+				margin-left: 50px;
+				
+				}
+				h2 {
+	               text-align: center;
+	               text-transform: uppercase;
+                 }
+                 button {
+	                    text-align: center;
+	                    background-color:#333333;
+	                    padding:5px ;
+	                    color: white;
+	                    font-size: 20px;
+	                    margin-top: 20px;
+	                    margin-left: 10px;
+						
+                    }
+				</style>
+				
+				
+				<div class="row">
+				
+				  <div class="column" style="background-color:#aaa;">
+				  
+				  <div class="image">
+			        <img  src="#" th:src="@{/IMAGE/banner-4.jpg}"  
+			        style="width:450px;height:300px"/>
+			     </div>
+				  	 
+				    <h2>Duronto</h2>
+	                <p>Long-distance trains with limited stops, these trains connect major state capitals and metropolitan cities of the country.
+				     Other than these, there are also super fast trains, express trains, Jan Shatabdi, Mail, Rajya Rani and Jansadharan ...</p>
+				    <button>More info...</button>
+				  </div>
+				  
+				  <div class="column" style="background-color:#bbb;">
+				 
+				 <div class="image">
+			        <img  src="#" th:src="@{/IMAGE/banner-2.jpg}"  
+			        style="width:450px;height:300px"/>
+			     </div>  
+				  			  
+				    <h2>Rajdhani</h2>
+				    <p>Connecting some of the major cities of India with the capital city of New Delhi, this is the highest priority Indian Railways.
+				     Just knowing the train schedule between two stations is not enough.you will get a list of all the trains that start from that ...</p>
+				    <button>More info...</button>
+				  </div>
+				  
+				  <div class="column" style="background-color:#aaa;">
+				  
+				  <div class="image">
+			        <img  src="#" th:src="@{/IMAGE/banner-5.jpg}"  
+			        style="width:450px;height:300px"/>
+			     </div>
+				  
+				  
+				    <h2>Intercity</h2>
+				    <p>These trains run between two major cities and complete a round trip within a day. It only has chair cars and second sitters. Train Name, Starting Point and Destination. 
+				    This is surely a simpler way to find a all the trains that start from train than asking for ...</p>
+				    <button>More info...</button>
+				  </div>
+				</div>     
+		     
+		     
+		     

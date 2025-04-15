@@ -1,0 +1,353 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+	 <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="" th:href="@{/CSS/web.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/CSS/web1.css}"/>   
+    <link rel="stylesheet" href="#" th:href="@{/CSS/webfooter.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/CSS/sidebarMenu.css}"/>
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	  
+	    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+</head>
+<body>
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+/* Full height image header */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/mac.jpg");
+  min-height: 100%;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+</style>
+<header>
+	
+	<div class="main_box">
+        <input type="checkbox" id="check">
+        <div class="btn_one">
+          <label for="check">
+            <i class="fas fa-bars"></i>
+          </label>
+        </div>
+        <div class="sidebar_menu">
+          <div class="logo">
+            <a href="#" >Indian Railway</a>
+          </div>
+          <div class="btn_two">
+            <label for="check">
+              <i class="fas fa-times"></i>
+            </label>
+          </div>
+          <div class="menu">
+            <ul>
+              <li><i class="fas fa-qrcode"></i>
+                <a href="web">Dashboard</a>
+              </li>
+              <li>
+                <i class="fas fa-link"></i>
+                <a href="signin">User Login</a>
+              </li>
+              <li >
+                <i class="fas fa-stream"></i>
+                <a href="#">Overview</a>
+              </li>
+              <li>
+                <i class="fas fa-calendar-week"></i>
+                <a href="#">Events</a>
+              </li>
+              <li>
+                <i class="fas fa-question-circle"></i>
+                <a href="about">AboutUs</a>
+              </li>
+              <li>
+                <i class="fas fa-sliders-h"></i>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <i class="fas fa-phone-volume"></i>
+                <a href="contact">Contact</a>
+              </li>
+              <li>
+                <i class="far fa-comments"></i>
+                <a href="#">Feedback</a>
+              </li>
+            </ul>
+          </div>
+          <div class="social_media">
+            <ul>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </ul>
+          </div>
+        </div>
+      </div>
+	
+	
+<nav>
+	<div class="logo"> <h1 style="font-size: 20px;"></h1> </div>
+	
+	<div class="menu">
+			       <a class="active" href="#home">Home Page</a>
+				  
+				  <a  href="/about" class="text About-US-link">About US</a>
+				  
+				   <a href="/contact" class="text Contact-link">Contact US</a>
+				  				 				  
+				  <a th:href="@{/signin}" class="text signup-link">Login</a>
+	           </div>
+</nav>
+ 	
+
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 		
+	<main>
+		<section>
+			<h3>Welcome To Traveling Train</h3>
+			<h1>DO COME & TRAVEL <span class="change_content"> </span> <span style="margin-top: -10px;"> | </span> </h1>
+			<p>"India once is not enough"</p>
+			<a href="https://en.wikipedia.org/wiki/Indian_Railway_Catering_and_Tourism_Corporation" class="btnone">learn more</a>
+			<a href="/User" class="btntwo">signup here</a>
+		</section>
+	</main>
+
+		<!--  <div class="row-items">
+			<div class="container-box">
+				<div class="container-img">
+				   <img alt="" src="/img/flights.png">
+				</div>
+			</div>
+		</div>-->
+</header>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/66a1053232dca6db2cb4a928/1i5qrhlgj';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+<div class="w3-container" style="padding:50px 16px" id="about">
+  <h3 class="w3-center">Have you not found the right one?</h3>
+  <p class="w3-center w3-large">Find a service suitable for you here.</p>
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+     <!-- <i class="fa fa-desktop w3-margin-bottom w3-jumbo w3-center"></i>
+      <i class="uil uil-plane-fly w3-margin-bottom w3-jumbo w3-center"></i>-->
+      <a href="https://www.ftr.irctc.co.in/ftr/"><img class="w3-margin-bottom w3-jumbo w3-center" alt="" src="/img/train.png" style="width: 100px; height: 100px" > </a>
+      <p class="w3-large">Charter Train</p>
+      <p>If you plan to organize a short or an extended tour for your employees of your company , then chartering a train is one of the best ways to travel.</p>
+    </div>
+    <div class="w3-quarter">
+      <a href="https://www.air.irctc.co.in/"><img  class="w3-margin-bottom w3-jumbo w3-center" alt="" src="/img/flights.png" style="width: 100px; height: 100px" > </a> 
+     <!--  <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>-->
+      <p class="w3-large">Flights</p>
+      <p>"Life is short, and the world is wide. Book a flight and start exploring!"," Book your flight and embark on an unforgettable journey."</p>
+    </div>
+    <div class="w3-quarter">
+    <a href="https://www.irctctourism.com/gallery/"><img  class="w3-margin-bottom w3-jumbo w3-center" src="/img/Travel.png" style="width: 100px; height: 100px" ></a> 
+    <!--   <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i> -->
+      <p class="w3-large">Holiday Tour Travel</p>
+      <p>“Travel makes a wise man better, and a fool worse.” “Like all great travelers, I have seen more than I remember, and remember more than I have seen.”</p>
+    </div>
+    <div class="w3-quarter">
+      <a href="https://www.bus.irctc.co.in/home"><img  class="w3-margin-bottom w3-jumbo w3-center" src="/img/bus.png" style="width: 100px; height: 100px" ></a>
+      <p class="w3-large">Bus</p>
+      <p>“Some beautiful paths can't be discovered without getting lost.” “You can't understand a city without using its public transportation system.”</p>
+    </div>
+  </div>
+</div>
+ <!--Section -->
+ 
+ <div class="w3-container" style="padding:5px 16px" id="about">
+  <div class="w3-row-padding w3-center" style="margin-top:5px">
+    <div class="w3-quarter">
+   
+      <a href="https://hotel.irctctourism.com/hotel"><img  class="w3-margin-bottom w3-jumbo w3-center" src="/img/hotel.png" style="width: 100px; height: 100px" ></a>
+      <p class="w3-large">Hotel</p>
+      <p>Being in a hotel is the best getaway you can ever get.
+The best escape you can have is getting a hotel room and doing what you love.</p>
+    </div>
+    <div class="w3-quarter">
+       <a href=https://www.ecatering.irctc.co.in><img  class="w3-margin-bottom w3-jumbo w3-center" src="/img/Catering.png" style="width: 100px; height: 100px" ></a>
+     <!--  <i class="fa fa-heart w3-margin-bottom w3-jumbo"></i>-->
+      <p class="w3-large">Catering</p>
+      <p>Travelling by train is an experience in itself, and what better way to make it more enjoyable than with delicious food from your favourite restaurant.</p>
+    </div>
+    <div class="w3-quarter">
+     <a href="https://www.irctctourism.com/tourpacakage_search?searchKey=&tagType=&travelType=Domestic&sector=All&bdar=3"><img  class="w3-margin-bottom w3-jumbo w3-center" src="/img/places.png" style="width: 80px; height: 80px" ></a>
+    <!--   <i class="fa fa-diamond w3-margin-bottom w3-jumbo"></i> -->
+      <p class="w3-large" style="padding-top: 20px">Places</p>
+      <p>"The world is big and I want to have a good look at it before it gets dark.""The world is a book, and those who do not travel read only one page."</p>
+    </div>
+    <div class="w3-quarter">
+      <a href="https://www.irctctourism.com/tourpacakage_search?searchKey=&tagType=&travelType=&category="><img  class="w3-margin-bottom w3-jumbo w3-center" src="/img/Packagetour.png" style="width: 100px; height: 100px" ></a>
+      <p class="w3-large">Holiday Packages</p>
+      <p>“Travel makes one modest. You see what a tiny place you occupy in the world.”“A vacation is a sunburn at premium prices.”</p>
+    </div>
+  </div>
+</div>
+ 
+
+ 
+ 
+ 
+ 
+ 	<!-- Team Section -->
+<div class="w3-container" style="padding:50px 16px" id="team">
+  <h3 class="w3-center">Travelling Train</h3>
+  <p class="w3-center w3-large">"The train is a small world moving through a larger world"</p>
+  <div class="w3-row-padding w3-grayscale" style="margin-top:64px">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/img/img-10.jpg" alt="John" style="width:100%; height: 235px">
+        <div class="w3-container">
+          <h3>Kashmir Railway</h3>
+          <p class="w3-opacity">About Journey</p>
+          <p>Our life is a constant journey, from birth to death. The landscape changes, the people change, our needs change, but the train keeps moving. Life is the train, not the station.</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/img/img-2.jpg" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h3>Himalayan Queen</h3>
+          <p class="w3-opacity">About Journey</p>
+          <p>"I like trains. I like their rhythm, and I like the freedom of being suspended between two places, all anxieties of purpose taken care of: for this moment I know where I am going."</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/img/img-000.jpg" alt="Mike" style="width:100%; height: 235px">
+        <div class="w3-container">
+          <h3>Mangalore</h3>
+          <p class="w3-opacity">About Journey</p>
+          <p>Life is the train, not the station. Our life is a constant journey. The landscape changes, the people change, but the train keeps moving. “Trains, like time and tide, stop for no one.” </p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-card">
+        <img src="/img/img-3.jpg" alt="Dan" style="width:100%; height: 235px">
+        <div class="w3-container">
+          <h3>Intercity</h3>
+          <p class="w3-opacity">About Journey</p>
+          <p>"To travel by train is to see nature and human beings, towns and churches and rivers. In fact, to see life." The train is a small world moving through a larger world.”</p>
+          <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+     
+     <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <h3>Madhu<span>Developer</span></h3>
+
+            <p class="footer-links">
+                <a href="web">Home</a>
+                |
+                <a href="/about">About</a>
+                |
+                <a href="/contact">Contact</a>
+                |
+                <a href="#">Blog</a>
+            </p>
+
+            <p class="footer-company-name">Copyright &copy; 2023 <strong>MadhuDeveloper</strong>|| All rights reserved</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Amruthnagar</span>
+                    Bengaluru</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+91 7899151608</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="madhugowda41826@gmail.com">madhugowda41826@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the company</span>
+                <strong style="color:#e0ac1c">IngrOInfo Software Solutions Pvt Ltd </strong> 
+             is a software development and service-based company, which believes that IT should be a highly value-adding asset
+              to businesses that rely on technology to provide a competitive advantage in their industry our vision and passion to provide services in the field of information technology.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+ <div id='tawk_66a1053232dca6db2cb4a928'></div>
+<!--Start of Tawk.to Script-->
+
+ 
+ 
+ 
+ 
+ 
+</body>
+</html>

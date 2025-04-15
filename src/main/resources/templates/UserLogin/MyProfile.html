@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> My Profile </title>
+
+    <!-- CSS -->
+   <link rel="stylesheet" href="#" th:href="@{/CSS/MyProfile.css}"/>
+   <link rel="stylesheet" href="#" th:href="@{/CSS/navbar.css}"/>
+    
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+  </head>
+  <body>
+        
+         <div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+  
+  
+      	 <div class="topnav">
+			 
+				  <a class="active" href="/user/search">Home Page</a>
+				  			  				 				  
+				  <a href="/user/change-password">Change Password</a>
+				  
+				  <a href="/user/myBooking">My Bookings</a>
+				   
+				  <a href="/user/myCancelTicket">Cancelled Ticket</a>
+				    
+				  <a th:href="@{/logout}" class="text signup-link">Logout</a>
+		     </div>  
+   
+  
+     <!--   <div class="IRCTC">
+       <img  src="#" th:src="@{/IMAGE/IRCTC.png}" class="profile-img" />
+      </div> -->
+  
+  
+  
+    <div class="profile-card">
+    
+      <div class="image">
+       <img  src="#" th:src="@{/IMAGE/Profile.jpg}" class="profile-img" />
+      </div>
+      
+      
+      <div class="text-data">
+           <div class="container">
+           
+           <input type="hidden" name="id" th:field="${user}"/>
+           
+				     <div class="input-field">
+                           <label>First Name : </label> 
+                            <span th:text="${user.firstName}"></span>                         
+                        </div>
+                        	  	
+                       
+                        <div class="input-field">
+                           <label>Last Name : </label>
+                            <span th:text="${user.lastName}"></span>
+                        </div>
+                        
+                          <div class="input-field">
+                           <label>Email Id : </label>
+                           <span th:text="${user.emailId}"></span>
+                        </div>	  	
+                        
+                        <div class="input-field">
+                           <label>Aadhar Number : </label>
+                           <span th:text="${user.aadharNumber}"></span>
+                        </div>
+                        
+                        <div class="input-field">
+                           <label>Phone Number : </label>
+                           <span th:text="${user.phone}"></span>
+                        </div>
+                        
+                        <div class="input-field">
+                           <label>Address : </label>
+                           <span th:text="${user.address}"></span>
+                        </div>
+			   </div>	 
+			</div>	
+		 </div>	
+
+  </body>
+</html>

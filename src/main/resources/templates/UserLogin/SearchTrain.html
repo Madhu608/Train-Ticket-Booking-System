@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="" th:href="@{/CSS/Search.css}"/>
+     <link rel="stylesheet" href="" th:href="@{/CSS/dropdown.css}"/>
+    
+
+   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+         
+         
+      <link rel="stylesheet" href="/CSS/SearchsidebarMenu.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+   
+      
+       
+        <div class="main_box">
+        <input type="checkbox" id="check">
+        <div class="btn_one">
+          <label for="check" >
+            <i class="fas fa-bars" ></i>
+          </label>
+        </div>
+        <div class="sidebar_menu">
+          <div class="logo">
+            
+            <a  class="user" th:href="@{/user/myProfile}"><span th:text="${user.firstName}" style="font: normal 25px 'Cookie', cursive; color: #ff7200"></span> 
+            <span th:text="${user.lastName}" style="font: normal 25px 'Cookie', cursive; font-weight: 600; color:#ff7200"></span> </a>	
+          </div>
+          <div class="btn_two">
+            <label for="check">
+              <i class="fas fa-times"></i>
+            </label>
+          </div>
+          <div class="menu">
+            <ul>
+              <li><i class="fa-solid fa-user"></i></i>
+                <a href="/user/myProfile">My profile</a>
+              </li>
+              <li>
+               <i class="fa-solid fa-ticket"></i>
+                <a href="/user/change-password">Change Password</a>
+              </li>
+              <li>
+                <i class="fas fa-stream"></i>
+                <a href="/user/myBooking">My Bookings</a>
+              </li>
+              <li>
+               <i class="fa-solid fa-ticket"></i>
+                <a href="/user/myCancelTicket">Cancelled Ticket</a>
+              </li>
+              <li>
+                <i class="fas fa-question-circle"></i>
+                <a href="about">About</a>
+              </li>
+              <li>
+                <i class="fas fa-sliders-h"></i>
+                <a href="#">Services</a>
+              </li>
+              <li>
+                <i class="fas fa-phone-volume"></i>
+                <a href="contact">Contact</a>
+              </li>
+              <li>
+                <i class="far fa-comments"></i>
+                <a href="#">Feedback</a>
+              </li>
+            </ul>
+          </div>
+          <div class="social_media">
+            <ul>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </ul>
+          </div>
+        </div>
+      </div>
+       
+       
+       
+       
+      <div class="main">  
+        
+       
+       
+				<div class="navbar">
+						    <a class="active" href="/user/search">Home Page</a>
+						    
+						    <div class="dropdown">
+						    
+						    <button class="dropbtn">My Account
+						      <i class="fa fa-caret-down"></i>
+						    </button>
+						    
+						    <div class="dropdown-content">
+						      <a href="/user/myProfile">My profile</a>
+						      <a href="/user/change-password">Change Password</a>
+						      <a href="/logout">Logout</a>
+						    </div>						    
+						  </div> 
+						  	
+						  	<div class="dropdown">					  
+						      <button class="dropbtn">My Transactions
+						     <i class="fa fa-caret-down"></i>						     
+						     </button>
+						    <div class="dropdown-content">
+						      <a href="/user/myBooking">My Bookings</a>
+						      <a href="/user/myCancelTicket">Cancelled Ticket</a>
+						    </div>
+						    
+						    						    
+					 </div> 
+					<!-- <a  class="user" th:href="@{/user/myProfile}">USER :  <span th:text="${user.firstName}" style="font: normal 18px 'Cookie', cursive"></span> <span th:text="${user.lastName}" style="font: normal 18px 'Cookie', cursive; font-weight: 800;"></span> </a>-->	
+				</div>
+		     
+		     
+		</div> 
+        <div class="content">
+            <h1>Search Your Train & <br><span>Book Your Ticket</span> <br>Travelling Train</h1>
+            <p class="par">You can book a train seat 120 days ahead in General quota while Tatkal tickets can be <br> booked a day in advance. You need to know that Indian Railways reservation<br> has different travel classes and quotas with different counter timings.  
+                <br> </p>
+
+                <button class="cn"><a href="/logout">LogOut</a></button>
+		     
+		 </div>
+	   		                
+    <div class="container">
+        <div class="forms">
+            <div class="form login">
+                <span class="title">Book Your Ticket</span>
+                
+             <form th:action="@{findTrain}" method="post" th:object="${traindetails}">
+             
+                    <div class="input-field">
+                        <input type="text" placeholder="Train From" name="trainFrom"  required>
+                         <i class="uil uil-metro"></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text"  placeholder="Train To" name="trainTo"  required>
+                        <i class="uil uil-metro"></i>
+                    </div>
+                    
+                         <div class="input-field">
+                        <input type="date"  placeholder="date" name="departureDate"  required >
+                        <i class="uil uil-calendar-alt"></i>
+                    </div>
+                    
+                      <div class="input-field">
+                        <select name="Class">
+							  <option value="All Classes">All Classes</option>
+							  <option value="AC First Class(1A">AC First Class(1A)</option>
+							  <option value="AC 2 Tier(2A)">AC 2 Tier(2A)</option>
+							  <option value="AC 3 Tier(3A)">AC 3 Tier(3A)</option>
+							  <option value="AC Chair car (CC">AC Chair car (CC)</option>
+							  <option value="Sleeper (SL">Sleeper (SL)</option>
+							  <option value="First Class(FS)">First Class(FS)</option>
+							  <option value="Second Sitting(2S)">Second Sitting(2S)</option>
+					</select>
+					<i class="uil uil-list-ui-alt"></i>
+                    </div>
+                     
+                      <div class="input-field">
+                        <select name="Quota" >
+							  <option  title="Quota">Quota</option>
+							   <option value="General">General</option>
+							   <option value="Ladies">Ladies</option>
+							   <option value="Tatkal">Tatkal</option> 
+							   <option  title="Lower Berth/Sr.Citizen">Lower Berth/Sr.Citizen</option>
+							  <option value="Premium Tatkal">Premium Tatkal</option>
+							  <option value="Person With disability">Person With disability</option>
+						</select>
+  							<i class="uil uil-list-ul"></i>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Find Trains">
+                    </div>
+                </form>
+            </div>
+           </div>
+        </div>
+   </div>	
+
+ </body>
+</html> 

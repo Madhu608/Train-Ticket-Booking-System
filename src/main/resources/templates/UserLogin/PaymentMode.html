@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+		<link rel="stylesheet" href="" th:href="@{/CSS/PaymentMode.css}"/>
+		<link rel="stylesheet" href="" th:href="@{/CSS/dropdown.css}"/>
+		
+		 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+		   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		 
+<title>Payment Mode</title>
+</head>
+<body>
+       <div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+        
+        		        
+				<div class="navbar">
+						    <a class="active" href="/user/search">Home Page</a>
+						    
+						    <div class="dropdown">
+						    
+						    <button class="dropbtn">My Account
+						      <i class="fa fa-caret-down"></i>
+						    </button>
+						    
+						    <div class="dropdown-content">
+						      <a href="/user/myProfile">My profile</a>
+						      <a href="/user/change-password">Change Password</a>
+						      <a href="/logout">Logout</a>
+						    </div>						    
+						  </div> 
+						  	
+						  	<div class="dropdown">					  
+						      <button class="dropbtn">My Transactions
+						     <i class="fa fa-caret-down"></i>						     
+						     </button>
+						    <div class="dropdown-content">
+						       <a href="/user/myBooking">My Bookings</a>
+						       <a href="/user/myCancelTicket">Cancelled Ticket</a>
+						    </div>						    
+					</div> 				   				  
+				</div>                
+				
+          <div class="container"> 
+            <div class="forms-reg">
+               <div class="form signup">
+                <span class="title">Select Payment Method</span>
+
+                <form th:action="@{/user/myBooking}" method="post" th:object="${user}">
+                    
+
+                        <div class="input-radio">
+                        <input type="radio" class="radio" >
+                        <img  th:src="@{/IMAGE/Paytm.svg}" style="width:90px;height:40px;margin-left:25px; margin-top: 20px;"/>  
+                        <img  th:src="@{/IMAGE/Visa.svg}" style="width:80px;height:37px;margin-left:-15px; margin-top: 20px;"/>
+                         <img  th:src="@{/IMAGE/Mastercard.svg}" style="width:80px;height:37px;margin-left:-20px; margin-top: 20px;"/>
+                         <img  th:src="@{/IMAGE/Rupay.png}" style="width:100px;height:28px;margin-left:-15px; margin-top:10px;"/>
+                       </div>
+                    
+                    <div class="input-radio">
+                        <input type="radio" class="radio" >
+                        <img  th:src="@{/IMAGE/PhonePe.svg}" style="width:90px;height:40px;margin-left:25px; margin-top: 20px;"/>  
+                        <img  th:src="@{/IMAGE/Google.svg}" style="width:80px;height:37px;margin-left:-15px; margin-top: 20px;"/>
+                         <img  th:src="@{/IMAGE/MobiKwik.svg}" style="width:90px;height:40px;margin-left:-20px; margin-top: 20px;"/>
+                         <img  th:src="@{/IMAGE/bharatpe.jpg}" style="width:80px;height:37px;margin-left:-10px; margin-top:10px;"/>
+                       </div>
+                       
+                       <div class="input-radio">
+                        <input class="radio" type="radio">
+                        <img  th:src="@{/IMAGE/UPI.svg}" style="width:90px;height:40px;margin-left:25px; margin-top: 23px;"/>  
+                        <img  th:src="@{/IMAGE/Bhimupi.png}" style="width:100px;height:30px;margin-left:-8px; margin-bottom:5px;"/>
+                         <img  th:src="@{/IMAGE/AmazonPay.svg}" style="width:130px;height:80px;margin-left:-8px; margin-bottom:-21px;"/>
+                       </div>
+          
+
+
+                    <div class="input-field button">
+                        <input type="submit" value="Make Payment">
+                    </div>
+                </form>
+
+                </div>
+            </div>
+        </div>
+</body>
+</html>

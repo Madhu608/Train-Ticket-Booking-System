@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+ <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="#" th:href="@{/CSS/Style.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/CSS/MyBookingdropdown.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/CSS/Pagination.css}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <title>Home Page</title>
+</head>
+<body>
+       <div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+       
+        				        
+		<div class="Navbar">
+						    <a class="active" href="/user/search">Home Page</a>
+						    
+						    <div class="dropdown">
+						    
+						    <button class="dropbtn">My Account
+						      <i class="fa fa-caret-down"></i>
+						    </button>
+						    
+						    <div class="dropdown-content">
+						      <a href="/user/myProfile">My profile</a>
+						      <a href="/user/change-password">Change Password</a>
+						      <a href="/logout">Logout</a>
+						    </div>						    
+						  </div> 
+						  	
+						  	<div class="dropdown">					  
+						      <button class="dropbtn">My Transactions
+						     <i class="fa fa-caret-down"></i>						     
+						     </button>
+						    <div class="dropdown-content">
+						       <a href="/user/myBooking">My Bookings</a>
+						       <a href="/user/myCancelTicket">Cancelled Ticket</a>
+						    </div>							    
+					</div>
+					<a class="active" href="/user/myBooking">Back button</a> 				   				  
+				</div>
+				      
+		     
+	         <style>
+				table {
+				  border-collapse: collapse;
+				  border-spacing: 0;
+				  width: 100%;
+				  border: 6px solid #fff;
+				  
+				}
+				h2{
+				text-align: center;
+				}
+				
+				th, td {
+			      text-align: left;
+				  padding: 14px;
+				  font-weight: 550;
+				  font-size: 16px;
+				  
+				  
+				}
+				th{
+			    font-size: 16px;
+			    background-color: #333;
+			    color: #fff;
+			    font-weight: 600;
+				
+				}
+				
+				tr:nth-child(even) {
+				  background-color: #f2f2f2;
+				}
+				</style>
+				</head>
+				<body>
+				
+				<h2>My Booking</h2>
+				
+				<table>
+				  <tr>
+				    				    
+				    <th>Train ID</th>
+				    
+				    <th>First Name</th>
+				    <th>Last Name</th>
+				    <th>Age</th>
+				    <th>Gender</th>
+				    <th>Aadhar Number</th>
+				    <th>Train From Time</th>
+				    <th>Train To Time</</th>
+				    
+				  </tr>
+				    <tr th:each="MyBooking:${myBooking}">
+				     
+				  	   <td th:text="${'TRAIN'+MyBooking.id}">Train ID</td>
+				  	
+				  	
+				  	  <td th:text="${MyBooking.firstName}">First Name</td>
+				  	  <td th:text="${MyBooking.lastName}">Last Name</td>
+				  	  <td th:text="${MyBooking.age}">Age</td>
+				  	  <td th:text="${MyBooking.gender}">Gender</td>
+				  	  <td th:text="${MyBooking.aadharNumber}">Aadhar Number</td>
+				  	  <td th:text="${MyBooking.trainFromTime}">TrainFrom Time</td>	
+				      <td th:text="${MyBooking.trainToTime}">TrainTo Time</td>
+				       
+				       
+				  </tr>
+				 
+				</table>
+	</body>
+</html>	       

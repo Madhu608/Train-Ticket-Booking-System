@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+ <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="#" th:href="@{/CSS/Style.css}"/>
+    <link rel="stylesheet" href="#" th:href="@{/CSS/navbar.css}"/>
+   <title>Home Page</title>
+</head>
+<body>
+       <div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+       
+       <div class="image">
+        <img  src="#" th:src="@{/IMAGE/banner1.jpg}"  style="width:100%;height:500px; margin-top:-23px"/>
+        </div> 
+        
+				        
+				        
+		<div class="topnav">
+			 
+				   <a class="active" href="/admin/AdminLogin">Home Page</a>
+				  
+				   <a href="/admin/addtrain" class="text AddTrain-link">Add Train</a>
+				  
+				   <a href="/admin/showtrain/0" class="text User-Registratio-link">Show Train</a>
+				   
+				   <a href="/admin/listOfUsers/0" class="text ShowTrain-link">List of Users</a>
+				   
+				    <a href="/admin/showtrain&passenger/0" class="text DisplayTrain&Passenger-link">Display Train & Passenger</a>
+				  				  
+				   <a href="/logout" class="text signup-link">Logout</a>
+				   
+				   <a th:href="@{/admin/showtrain&passenger/0}">Back button</a>	
+				   				  				 								  
+		     </div> 
+		     
+	         <style>
+				table {
+				  border-collapse: collapse;
+				  border-spacing: 0;
+				  width: 100%;
+				  border: 6px solid #fff;
+				  
+				}
+				h2{
+				text-align: center;
+				}
+				
+				th, td {
+				  text-align: left;
+				  padding: 14px;
+				  
+				  
+				}
+				th{
+			    font-size: 18px;
+				
+				}
+				
+				tr:nth-child(even) {
+				  background-color: #f2f2f2;
+				}
+				</style>
+				</head>
+				<body>
+				
+				<h2>Train And Passenger List</h2>
+				
+				<table>
+				  <tr>
+				    				    
+				    <th>Train ID</th>
+				    
+				    <th>First Name</th>
+				    <th>Last Name</th>
+				    <th>Age</th>
+				    <th>Aadhar Number</th>
+				    <th>Email Id</th>
+				    <th>Ticket Price</th>
+				    
+				  </tr>
+				    <tr th:each="Trainsandpassenger:${listTrainsandpassenger}">
+				     
+				  	   <td th:text="${Trainsandpassenger.id}">Train ID</td>
+				  	
+				  	
+				  	  <td th:text="${Trainsandpassenger.firstName}">First Name</td>
+				  	  <td th:text="${Trainsandpassenger.lastName}">Last Name</td>
+				  	  <td th:text="${Trainsandpassenger.age}">Age</td>
+				  	  <td th:text="${Trainsandpassenger.aadharNumber}">Aadhar Number</td>
+				  	  <td th:text="${Trainsandpassenger.email}">Email Id</td>	
+				      <td th:text="${Trainsandpassenger.ticketPrice}">Ticket Price</td>
+				       
+				       
+				  </tr>
+				 
+				</table>
+	</body>
+</html>	       

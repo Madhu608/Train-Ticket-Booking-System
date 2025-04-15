@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+		<link rel="stylesheet" href="" th:href="@{/CSS/Registration.css}"/>
+		<link rel="stylesheet" href="" th:href="@{/CSS/message.css}"/>
+		<link rel="stylesheet" href="" th:href="@{/CSS/Registrationweb.css}"/>
+		
+		 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+		 
+<title>Registration Form</title>
+</head>
+<body >
+ <form  th:action="@{SaveReg}" method="post" th:object="${user}">
+      
+   
+        
+        		        
+			<!--   <div class="topnav">
+			 
+				  <a class="active" href="/index">Home Page</a>
+				  				  				 				  
+				  <a href="/signin" class="text signup-link">Login</a>
+				  
+		     </div>  -->              
+                  
+                  
+           		        <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">Indian Railway</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="web">HOME</a></li>
+                    <li><a href="about">ABOUT</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="signin">LOGIN</a></li>
+                    <li><a href="contact">CONTACT</a></li>
+                </ul>
+            </div>
+
+             <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type To text">
+                <a href="#"> <button class="btn">Search</button></a>
+            </div>
+
+        </div> 
+        <div class="content">
+            <h1>Traveling Train & <br><span>Reservation</span> <br>Latest Events</h1>
+            <p class="par">Indian Railway Catering and Tourism Corporation is an Indian public sector undertaking <br> that provides ticketing, catering, and tourism services for the Indian Railways. <br>This web site is developed by <a href="//ingroinfo.com/#" class="text signup-link" style="color: #ff7200">IngroInfo Software Solution</a>
+               </p>
+
+                <button class="cn"><a href="signin">LOGIN</a></button>
+		     
+		     </div>       
+            </div>       
+                  
+                			
+            <!-- Registration Form -->
+          <div class="container"> 
+            <div class="forms-reg">
+            
+               <div class="form signup">
+               
+               <span class="Invalid-Email" id="emailError" style="color: red;"></span>
+               <span id="firstNameError" style="color: green;"></span>
+               <span id="lastNameError" style="color: green;"></span>
+               <span id="emailError" style="color: green;"></span>
+               <span id="aadharNumberError" style="color: green;"></span>
+               <span id="passwordError" style="color: green;"></span>
+               <span id="phoneNumberError" style="color: green;"></span>
+               <span id="addressError" style="color: green;"></span>
+               
+               
+                <!-- Start of Alert Message Filed -->
+				<div class="message">
+				<div th:if="${session.message}">
+					<div class="alert alert-primary" role="alert"
+						th:classappend="${'alert-'+session.message.type}">
+						<span class="text-dark fw-bold"
+						th:text="${session.message.content}"></span>
+					</div>
+					<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				</div>
+				</div>
+				<!-- End of Alert Message Filed -->
+				
+				
+                <span class="title">Registration</span>
+                               
+               
+                    <div class="input-field">
+                    
+                        <input type="text" id="firstName"   placeholder="Enter your first name" name="firstName" required  minlength="2" maxlength="20" >
+                        <i class="uil uil-user"></i>
+                    </div>
+                    
+                     <div class="input-field">
+                        <input type="text" id="lastName" placeholder="Enter your last name" name="lastName" required minlength="1" maxlength="20" >
+                        <i class="uil uil-user"></i>
+                    </div>
+                    
+                    <div class="input-field">
+                        <input type="text" id="email" placeholder="Enter your email id" name="emailId" required >                
+                        <i class="uil uil-envelope icon"></i>
+                    </div>
+                    
+                    <div class="input-field">
+                        <input type="password" id="password"   class="password" placeholder="Create a password" name="password" required  minlength="8" maxlength="12" >
+                        
+                        <i class="uil uil-lock icon"></i>
+                    </div>
+                    
+          
+                     <div class="input-field">
+                        <input type="text"  pattern="[0-9]{12}" id="aadharNumber"   placeholder="Enter your aadhar number" name="aadharNumber" required minlength="12" maxlength="12" >
+                        <i class="uil uil-list-ol-alt"></i>
+                    </div>
+                                     
+                     <div class="input-field">
+                        <input required type="Phone" pattern="[0-9]{10}" id="phoneNumber"   class="Phone" placeholder="Enter phone number"  name="phone"  minlength="10" maxlength="10" >             
+                        <i class="uil uil-dialpad-alt"></i>
+                         
+                    </div>
+                    
+                     <div class="input-field">
+                        <input type="text"  id="address" class="Address" placeholder="Enter your address"  name="address" minlength="10" maxlength="100" required >
+                        <i class="uil uil-location-pin-alt"></i>
+                        
+                    </div>
+
+                    <div class="checkbox-text">
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="termCon">
+                            <label for="termCon" class="text">I accepted all terms and conditions</label>
+                        </div>
+                    </div>
+
+                    <div class="input-field button">
+                        <input type="submit" value="Register Now">
+                    </div>
+                
+
+                <div class="login-signup">
+                    <span class="text">Already a member?
+                        <a href="/signin" class="text login-link">Login Now</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+     <script th:src="@{/JS/Script1.js}"></script> 
+       
+       <script>
+		const firstNameInput = document.getElementById('firstName');
+		const lastNameInput = document.getElementById('lastName');
+		const emailInput = document.getElementById('email');
+		const aadharNumberInput = document.getElementById('aadharNumber');
+		const passwordInput = document.getElementById('password');
+		
+		const phoneNumberInput = document.getElementById('phoneNumber');
+		const addressInput = document.getElementById('address');
+
+		const firstNameError = document.getElementById('firstNameError');
+		const lastNameError = document.getElementById('lastNameError');
+		const emailError = document.getElementById('emailError');
+		const aadharNumberError = document.getElementById('aadharNumberError');
+		const passwordError = document.getElementById('passwordError');
+		
+		const phoneNumberError = document.getElementById('phoneNumberError');
+		const addressError = document.getElementById('addressError');
+
+		function validateFirstName() {
+			if (firstNameInput.value.trim() === '') {
+				firstNameError.textContent = 'First Name is required';
+				return false;
+			} else if (firstNameInput.value.trim().length < 2) {
+				firstNameError.textContent = 'First Name must be at least 2 characters';
+				return false;
+			} else {
+				firstNameError.textContent = '';
+				return true;
+			}
+		}
+
+		function validateLastName() {
+			if (lastNameInput.value.trim() === '') {
+				lastNameError.textContent = 'Last Name is required';
+				return false;
+			} else if (lastNameInput.value.trim().length < 1) {
+				lastNameError.textContent = 'Last Name must be at least 1 character';
+				return false;
+			} else {
+				lastNameError.textContent = '';
+				return true;
+			}
+		}
+
+		function validateEmail() {
+			  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			  if (emailInput.value.trim() === '') {
+			    emailError.textContent = 'Email is required';
+			    return false;
+			  } else if (!emailRegex.test(emailInput.value.trim())) {
+			    emailError.textContent = 'Invalid Email';
+			    return false;
+			  } else if (/[~`!#$%^&*+=\-[\]\\';,/{}|\\":<>?]/g.test(emailInput.value.trim())) {
+			    emailError.textContent = 'Email should not contain special characters';
+			    return false;
+			  } else {
+			    emailError.textContent = '';
+			    return true;
+			  }
+			}
+
+		/*function validateAadharNumber() {
+			if (aadharNumberInput.value.trim() === '') {
+				aadharNumberError.textContent = 'Aadhar Number is required';
+				return false;
+			} else if (aadharNumberInput.value.trim().length !== 12) {
+				aadharNumberError.textContent = 'Aadhar Number must be exactly 12 digits';
+				return false;
+			} else {
+				aadharNumberError.textContent = '';
+				return true;
+			}
+		}*/
+		
+		/*function validateAadharNumber() {
+		    if (aadharNumberInput.value.trim() === '') {
+		        aadharNumberError.textContent = 'Aadhar Number is required';
+		        return false;
+		    } else if (!/^[0-9]{12}$/.test(aadharNumberInput.value.trim())) {
+		        aadharNumberError.textContent = 'Aadhar Number must contain exactly 12 digits';
+		        return false;
+		    } else {
+		        aadharNumberError.textContent = '';
+		        return true;
+		    }
+		}*/
+		
+		
+		function validateAadharNumber() {
+			const phoneNumberRegex = /^[0-9]{12}$/;
+			if (aadharNumberInput.value.trim() === '') {
+				aadharNumberError.textContent = 'Aadhar Number is required';
+				return false;
+			} else if (!phoneNumberRegex.test(aadharNumberInput.value.trim())) {
+				aadharNumberError.textContent = 'Aadhar Number must contain exactly 12 digits';
+				return false;
+			} else {
+				aadharNumberError.textContent = '';
+				return true;
+			}
+		}
+		
+
+		function validatePassword() {
+			if (passwordInput.value.trim() === '') {
+				passwordError.textContent = 'Password is required';
+				return false;
+			} else if (passwordInput.value.trim().length < 6 || passwordInput.value.trim().length > 8) {
+				passwordError.textContent = 'Password must be between 6 to 8 characters';
+				return false;
+			} else {
+				passwordError.textContent = '';
+				return true;
+			}
+		}
+
+	
+
+		function validatePhoneNumber() {
+			const phoneNumberRegex = /^[0-9]{10}$/;
+			if (phoneNumberInput.value.trim() === '') {
+				phoneNumberError.textContent = 'Phone Number is required';
+				return false;
+			} else if (!phoneNumberRegex.test(phoneNumberInput.value.trim())) {
+				phoneNumberError.textContent = 'Invalid Phone Number';
+				return false;
+			} else {
+				phoneNumberError.textContent = '';
+				return true;
+			}
+		}
+
+		function validateAddress() {
+			if (addressInput.value.trim() === '') {
+				addressError.textContent = 'Address is required';
+				return false;
+			} else {
+				addressError.textContent = '';
+				return true;
+			}
+		}
+
+		function validateForm(event) {
+			event.preventDefault();
+			const isFirstNameValid = validateFirstName();
+			const isLastNameValid = validateLastName();
+			const isEmailValid = validateEmail();
+			const isAadharNumberValid = validateAadharNumber();
+			const isPasswordValid = validatePassword();
+			
+			const isPhoneNumberValid = validatePhoneNumber();
+			const isAddressValid = validateAddress();
+
+			if (isFirstNameValid && isLastNameValid && isEmailValid && isAadharNumberValid && isPasswordValid &&  isPhoneNumberValid && isAddressValid) {
+				event.target.submit();
+			}
+		}
+
+		firstNameInput.addEventListener('input', validateFirstName);
+		lastNameInput.addEventListener('input', validateLastName);
+		emailInput.addEventListener('input', validateEmail);
+		aadharNumberInput.addEventListener('input', validateAadharNumber);
+		passwordInput.addEventListener('input', validatePassword);
+		
+		phoneNumberInput.addEventListener('input', validatePhoneNumber);
+		addressInput.addEventListener('input', validateAddress);
+	</script>   
+</body>
+</html>
+
+

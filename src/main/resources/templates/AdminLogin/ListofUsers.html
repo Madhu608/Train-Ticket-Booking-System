@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+ <!-- ===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="#" th:href="@{/CSS/Style.css}"/>
+    <link rel="stylesheet" href="#" th:href="@{/CSS/navbar.css}"/>
+    <link rel="stylesheet" href="" th:href="@{/CSS/Pagination.css}"/>
+     <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+   <title>Home Page</title>
+</head>
+<body>
+       <div class="heading">
+        <h2>Traveling Train</h2>
+       </div>
+       
+       <div class="image">
+        <img  src="#" th:src="@{/IMAGE/banner1.jpg}"  style="width:100%;height:500px; margin-top:-30px"/>
+        </div> 
+        
+				        
+				        
+		        
+		<div class="topnav">
+			 
+				   <a class="active" href="/admin/AdminLogin">Home Page</a>
+				  
+				   <a href="/admin/addtrain" class="text AddTrain-link">Add Train</a>
+				  
+				   <a href="/admin/showtrain/0" class="text User-Registratio-link">Show Train</a>
+				   
+				   <a href="/admin/listOfUsers/0" class="text ShowTrain-link">List of Users</a>
+				   
+				    <a href="/admin/showtrain&passenger/0" class="text DisplayTrain&Passenger-link">Display Train & Passenger</a>
+				  				  
+				   <a href="/logout" class="text signup-link">Logout</a>
+				   				  				 								  
+		     </div> 
+				   				  				 								  
+		     </div> 
+	         <style>
+	        
+				table {
+				  border-collapse: collapse;
+				  border-spacing: 0;
+				  width: 100%;
+				  border: 6px solid #fff;
+				  
+				}
+				h2{
+				text-align: center;
+				font-size: 35px;
+				}
+				
+				th, td {
+				  text-align: left;
+				  padding: 14px;
+				  font-weight: 500;
+				  
+				}
+				th{
+			    font-size: 20px;
+				font-weight: bold;
+				}
+				
+				tr:nth-child(even) {
+				  background-color: #f2f2f2;
+				}
+				</style>
+				</head>
+				<body>
+				
+				<h2>List of Users</h2>
+				
+				<table>
+				  <tr>
+				    <th>User Id</th>
+				    <th>First Name</th>
+				    <th>Last Name</th>
+				    <th>Aadhar Number</th>
+				    <th>Email Id</th>
+				    <th>Phone Number</th>	    
+				    <th>Address</th>
+				    
+				  </tr>
+				    <tr th:each="listAllUsers:${listUsers}">
+				 	  <td th:text="${'USERID'+listAllUsers.id}">User Id</td>
+				      <td th:text="${listAllUsers.firstName}">First Name</td>
+				  	  <td th:text="${listAllUsers.lastName}">Last Name</td>
+				  	   <td th:text="${listAllUsers.emailId}">Email Id</td>
+				  	  <td th:text="${listAllUsers.aadharNumber}">Aadhar Number</td>
+				  	  <td th:text="${listAllUsers.phone}">Phone Number</td>	  	    
+				      <td th:text="${listAllUsers.address}">Address</td>
+				       
+				  </tr>
+				 
+				</table>
+				
+					<ul class="pagination">
+				<li></li>
+				
+				</ul> 
+				
+	 <!-- pagination part -->
+		
+		<div class="container">
+				    
+		  <div class="links">
+		    <span th:if="${CurrentPage !=0}" class="page-item">
+		    <a class="link" th:href="@{'/admin/listOfUsers/'+${CurrentPage-1}}" href="#"><i class="fa-solid fa-angles-left"></i></a></span>		       
+		  </div>
+		      		     
+		  <div class="links">		      
+		    <span th:classappend="${CurrentPage==i-1?'active':''}" th:each="i:${#numbers.sequence(1,totalPages)}" >
+		    <a class="link" th:href="@{'/admin/listOfUsers/'+${i-1}}"><span th:text="${i}"></span></a></span>  
+		  </div>
+		
+		     
+		  <div class="links">
+		   <span th:if="${CurrentPage+1 !=totalPages}" class="page-item">
+		   <a class="link" th:href="@{'/admin/listOfUsers/'+${CurrentPage+1}}" href="#"><i class="fa-solid fa-angles-right"></i></a></span>   
+		 </div>	
+	</body>
+</html>	       
